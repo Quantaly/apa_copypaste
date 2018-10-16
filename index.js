@@ -12,7 +12,7 @@ function updateOutput() {
 	ret += date.value;
 	ret += "). ";
 	ret += title.value;
-	ret += " Retrieved ";
+	ret += ". Retrieved ";
 	ret += retrieved.value;
 	ret += ", from ";
 	ret += url.value;
