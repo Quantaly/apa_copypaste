@@ -34,3 +34,5 @@ url.addEventListener("input", updateOutput);
 output.addEventListener("input", updateOutput);
 
 selectAll.addEventListener("click", selectAllF);
+
+updateOutput();
