@@ -12,7 +12,7 @@ let selectAll = document.getElementById("selectall");
 
 function updateOutput() {
     let ret = author.value;
-    if (!author.value.endswith(".")) ret += ".";
+    if (!author.value.endsWith(".")) ret += ".";
     ret += " (";
     ret += date.value;
     ret += "). ";
