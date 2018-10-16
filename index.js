@@ -8,22 +8,23 @@ let selectAll = document.getElementById("selectall");
 
 function updateOutput() {
     let ret = author.value;
-	ret += ". (";
-	ret += date.value;
-	ret += "). ";
-	ret += title.value;
-	ret += ". Retrieved ";
-	ret += retrieved.value;
-	ret += ", from ";
-	ret += url.value;
-	ret += ".";
-	output.value = ret;
+    if (!author.value.endswith(".")) ret += ".";
+    ret += " (";
+    ret += date.value;
+    ret += "). ";
+    ret += title.value;
+    ret += ". Retrieved ";
+    ret += retrieved.value;
+    ret += ", from ";
+    ret += url.value;
+    ret += ".";
+    output.value = ret;
 }
 
 function selectAllF() {
-	output.selectionStart = 0;
-	output.selectionEnd = output.value.length;
-	output.focus();
+    output.selectionStart = 0;
+    output.selectionEnd = output.value.length;
+    output.focus();
 }
 
 author.addEventListener("input", updateOutput);
