@@ -24,7 +24,6 @@ function updateOutput() {
     ret += retrieved.value;
     ret += ", from ";
     ret += url.value;
-    ret += ".";
     output.value = ret;
 }
 
