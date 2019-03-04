@@ -3,6 +3,7 @@ const MONTHS = ["January", "February", "March", "April", "May", "June", "July", 
 let author = document.getElementById("author");
 let date = document.getElementById("date");
 let title = document.getElementById("title");
+let publisher = document.getElementById("publisher");
 let retrieved = document.getElementById("retrieved");
 let url = document.getElementById("url");
 let output = document.getElementById("output");
@@ -17,6 +18,8 @@ function updateOutput() {
     ret += date.value;
     ret += "). ";
     ret += title.value;
+    ret += ". ";
+    ret += publisher.value;
     ret += ". Retrieved ";
     ret += retrieved.value;
     ret += ", from ";
@@ -43,6 +46,7 @@ function resetAll() {
     author.value = "";
     date.value = "";
     title.value = "";
+    publisher.value = "";
     resetRetrieved();
     url.value = "";
     updateOutput();
@@ -51,6 +55,7 @@ function resetAll() {
 author.addEventListener("input", updateOutput);
 date.addEventListener("input", updateOutput);
 title.addEventListener("input", updateOutput);
+publisher.addEventListener("input", updateOutput);
 retrieved.addEventListener("input", updateOutput);
 url.addEventListener("input", updateOutput);
 output.addEventListener("input", updateOutput);
