@@ -64,3 +64,8 @@ selectAll.addEventListener("click", selectAllF);
 
 resetRetrieved();
 updateOutput();
+
+// service worker
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js");
+}
