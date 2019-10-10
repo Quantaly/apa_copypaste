@@ -25,18 +25,18 @@ function updateOutput() {
     ret += retrieved.value;
     ret += ", from ";
     ret += url.value;
-    output.innerHTML = ret;
+    output.innerText = ret;
 }
 
 let copyTimeout;
 function copyF() {
-    navigator.clipboard.writeText(output.innerHTML).then(_ => {
-        copied.innerHTML = "Copied!";
+    navigator.clipboard.writeText(output.innerText).then(_ => {
+        copied.innerText = "Copied!";
         if (copyTimeout) {
             clearTimeout(copyTimeout);
         }
         copyTimeout = setTimeout(_ => {
-            copied.innerHTML = "";
+            copied.innerText = "";
         }, 2000);
     });
 }
@@ -65,7 +65,6 @@ title.addEventListener("input", updateOutput);
 publisher.addEventListener("input", updateOutput);
 retrieved.addEventListener("input", updateOutput);
 url.addEventListener("input", updateOutput);
-output.addEventListener("input", updateOutput);
 
 reset.addEventListener("click", resetAll);
 copy.addEventListener("click", copyF);

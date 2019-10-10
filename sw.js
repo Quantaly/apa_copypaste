@@ -1,4 +1,4 @@
-const CACHE_NAME = "apa_copypaste-v3";
+const CACHE_NAME = "apa_copypaste-v4";
 const TO_CACHE = [
     ".",
     "index.html",
