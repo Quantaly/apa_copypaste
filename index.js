@@ -9,7 +9,7 @@ let url = document.getElementById("url");
 let output = document.getElementById("output");
 
 let reset = document.getElementById("reset");
-let selectAll = document.getElementById("selectall");
+let copy = document.getElementById("copy");
 
 function updateOutput() {
     let ret = author.value;
@@ -24,13 +24,11 @@ function updateOutput() {
     ret += retrieved.value;
     ret += ", from ";
     ret += url.value;
-    output.value = ret;
+    output.innerHTML = ret;
 }
 
-function selectAllF() {
-    output.selectionStart = 0;
-    output.selectionEnd = output.value.length;
-    output.focus();
+function copyF() {
+    navigator.clipboard.writeText(output.innerHTML);
 }
 
 function resetRetrieved() {
@@ -60,12 +58,12 @@ url.addEventListener("input", updateOutput);
 output.addEventListener("input", updateOutput);
 
 reset.addEventListener("click", resetAll);
-selectAll.addEventListener("click", selectAllF);
+copy.addEventListener("click", copyF);
 
 resetRetrieved();
 updateOutput();
 
 // service worker
-if ("serviceWorker" in navigator) {
+/*if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("sw.js");
-}
+}*/

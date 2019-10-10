@@ -8,35 +8,33 @@
         <h1>APA CopyPaste</h1>
         <table>
             <tr>
-                <td>Author:</td>
+                <td><label for="author">Author:</label></td>
                 <td><input type="text" id="author" autocomplete="off"></td>
             </tr>
             <tr>
-                <td>Date:</td>
+                <td><label for="date">Date:</label></td>
                 <td><input type="text" id="date" autocomplete="off"></td>
             </tr>
             <tr>
-                <td>Title:</td>
+                <td><label for="title">Title:</label></td>
                 <td><input type="text" id="title" autocomplete="off"></td>
             </tr>
             <tr>
-                <td>Publisher:</td>
+                <td><label for="publisher">Publisher:</label></td>
                 <td><input type="text" id="publisher" autocomplete="off"></td>
             </tr>
             <tr>
-                <td>Retrieved:</td>
+                <td><label for="retrieved">Retrieved:</label></td>
                 <td><input type="text" id="retrieved" autocomplete="off"></td>
             </tr>
             <tr>
-                <td>URL:</td>
+                <td><label for="url">URL:</label></td>
                 <td><input type="text" id="url" autocomplete="off"></td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td><input type="button" id="reset" value="Reset"></td>
             </tr>
         </table>
         <br>
-        <p><input type="text" id="output" autocomplete="off" placeholder="Output goes here"> <input type="button" id="selectall" value="Select All"></p>
+        <button id="reset">Reset</button>
+        <button id="copy">Copy</button>
+        <p id="output"></p>
     </body>
 </html>
