@@ -10,6 +10,7 @@ let output = document.getElementById("output");
 
 let reset = document.getElementById("reset");
 let copy = document.getElementById("copy");
+let copied = document.getElementById("copied");
 
 function updateOutput() {
     let ret = author.value;
@@ -27,8 +28,17 @@ function updateOutput() {
     output.innerHTML = ret;
 }
 
+let copyTimeout;
 function copyF() {
-    navigator.clipboard.writeText(output.innerHTML);
+    navigator.clipboard.writeText(output.innerHTML).then(_ => {
+        copied.innerHTML = "Copied!";
+        if (copyTimeout) {
+            clearTimeout(copyTimeout);
+        }
+        copyTimeout = setTimeout(_ => {
+            copied.innerHTML = "";
+        }, 2000);
+    });
 }
 
 function resetRetrieved() {
@@ -64,6 +74,6 @@ resetRetrieved();
 updateOutput();
 
 // service worker
-if ("serviceWorker" in navigator) {
+if ("serviceWorker" in navigator && window.location.href.indexOf("localhost") < 0) {
     navigator.serviceWorker.register("sw.js");
 }

@@ -1,8 +1,9 @@
-const CACHE_NAME = "apa_copypaste-v2";
+const CACHE_NAME = "apa_copypaste-v3";
 const TO_CACHE = [
     ".",
     "index.html",
-    "index.js"
+    "styles.css",
+    "index.js",
 ];
 
 self.addEventListener("install", (event) => {
