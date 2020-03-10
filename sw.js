@@ -1,4 +1,4 @@
-const CACHE_NAME = "apa_copypaste-v4";
+const CACHE_NAME = "apa_copypaste-v5";
 const TO_CACHE = [
     ".",
     "index.html",
@@ -16,7 +16,7 @@ self.addEventListener("install", (event) => {
 self.addEventListener("activate", (event) => {
     event.waitUntil(caches.keys().then((cacheNames) => {
         return Promise.all(cacheNames.map((name) => {
-            if (name !== CACHE_NAME) {
+            if (name.startsWith("apa_copypaste") && name !== CACHE_NAME) {
                 return caches.delete(name);
             }
         }));
